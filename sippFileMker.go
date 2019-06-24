@@ -182,7 +182,6 @@ func UacSendRequest(method string, args []string) (request string) {
 	}
 	request += "]]>\n"
 	request += "</send>\n"
-
 	return request
 }
 
@@ -221,7 +220,6 @@ func UacRecvStatus(method string, args []string) string {
 	}
 	status += "></recv>\n"
 	return status
-
 }
 
 func MakeRegisterSec() (registerSec, unregisterSec string) {
@@ -400,10 +398,6 @@ func out_of_call(inter_time string) string {
 }
 
 func MkScenario(fileName, testType, interTime string, args []string) {
-	// sipXmlFileName := fmt.Sprintf("%vsipp-%v.xml", dir, pid)
-	// sipCsvFileName := fmt.Sprintf("%vsipp-%v.xml", dir, pid)
-	// oocFileBytes := out_of_call("400")
-
 	kwargsSlice := []string{}
 	kwargsSliceStr := ""
 	kwargs := make(map[string]string)
@@ -419,7 +413,6 @@ func MkScenario(fileName, testType, interTime string, args []string) {
 		kwargsSliceStr = strings.Join(kwargsSlice, " ")
 		// fmt.Println(kwargsSliceStr)
 	}
-
 	switch testType {
 	case "out_of_call":
 		oocFileBytes := out_of_call("400") // 其他消息的处理场景 获取 oocbytes
