@@ -1,0 +1,26 @@
+SEQUENTIAL
+1--66366;66366;[authentication username=66366 password=123456];18002549645
+2--66408;66408;[authentication username=66408 password=123456];18002506436
+#3--66413;66413;[authentication username=66413 password=123456];18018762463
+4--66369;66369;[authentication username=66369 password=123456];18002548416
+5--66409;66409;[authentication username=66409 password=123456];18002540341
+#6--66389;66389;[authentication username=66389 password=123456];66419
+#7--66376;66376;[authentication username=66376 password=123456];66372
+#8--66412;66412;[authentication username=66412 password=123456];66374
+
+#SEQUENTIAL
+#9000;9000;[authentication username=9000 password=123456];1001
+#9000;9000;[authentication username=9000 password=123456];2001
+#9000;9000;[authentication username=9000 password=123456];3001
+#9000;9000;[authentication username=9000 password=123456];910086
+
+
+#SEQUENTIAL 代表 按顺序 读取下面的配置信息
+#以分号分隔参数，前两个参数是主叫号码的信息，
+#第二个参数是主叫号码，第一个参数是主叫号码的描述信息。
+#最后一个参数是发送的目的号码。
+#例如设置网关的failover为端口2 那么执行脚本后
+#端口2会呼叫最后一个参数，通过运营商打到这个参数的号码。
+#如果failover的号码为VOIP 的话 就无法发送最后一个参数的号码
+#
+#

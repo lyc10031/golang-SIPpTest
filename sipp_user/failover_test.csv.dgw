@@ -1,0 +1,5 @@
+SEQUENTIAL
+9000;9000;[authentication username=9000 password=123456];1001
+9000;9000;[authentication username=9000 password=123456];2001
+9000;9000;[authentication username=9000 password=123456];3001
+9000;9000;[authentication username=9000 password=123456];4001

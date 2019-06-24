@@ -1,0 +1,2 @@
+SEQUENTIAL,PRINTF=120,PRINTFMULTIPLE=1,PRINTFOFFSET=1,
+1%04d;1%04d;[authentication username=1%04d password=1%04d];1%04d

@@ -1,0 +1,25 @@
+SEQUENTIAL
+12001;12001;[authentication username=12001 password=12001];12012
+12001;12001;[authentication username=12001 password=12001];12567
+12001;12001;[authentication username=12001 password=12001];11123
+12001;12001;[authentication username=12001 password=12001];10234
+12001;12001;[authentication username=12001 password=12001];123456
+12001;12001;[authentication username=12001 password=12001];20456
+11001;11001;[authentication username=11001 password=11001];12012
+11001;11001;[authentication username=11001 password=11001];12567
+11001;11001;[authentication username=11001 password=11001];11123
+11001;11001;[authentication username=11001 password=11001];10234
+11001;11001;[authentication username=11001 password=11001];123456
+11001;11001;[authentication username=11001 password=11001];20456
+10000;10000;[authentication username=10000 password=10000];12012
+10000;10000;[authentication username=10000 password=10000];12567
+10000;10000;[authentication username=10000 password=10000];11123
+10000;10000;[authentication username=10000 password=10000];10234
+10000;10000;[authentication username=10000 password=10000];123456
+10000;10000;[authentication username=10000 password=10000];20456
+20001;20001;[authentication username=20001 password=20001];12012
+20001;20001;[authentication username=20001 password=20001];12567
+20001;20001;[authentication username=20001 password=20001];11123
+20001;20001;[authentication username=20001 password=20001];10234
+20001;20001;[authentication username=20001 password=20001];123456
+20001;20001;[authentication username=20001 password=20001];20456
