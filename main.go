@@ -30,6 +30,14 @@ type callConfig struct {
 	csv_file        string
 }
 
+func checkLsExists() {
+    path, err := os.exec.LookPath("sipp")
+    if err != nil {
+        fmt.Printf("didn't find 'sipp' executable\n")
+    } else {
+        fmt.Printf("'sipp' executable is in '%s'\n", path)
+    }
+}
 
 func main() {
 	// fmt.Printf("This is a sipp test script configured by golang to test the sip protocol\nAuthor: yongchengLei\n")
