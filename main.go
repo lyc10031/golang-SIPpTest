@@ -30,26 +30,14 @@ type callConfig struct {
 	csv_file        string
 }
 
-func checkType(i interface{}) {
-	switch v := i.(type) {
-	case int:
-		fmt.Printf("Twice %v is %v\n", v, v*2)
-	case string:
-		fmt.Printf("%q is %v bytes long\n", v, len(v))
-	default:
-		fmt.Printf("I don't know about type %T!\n", v)
-	}
-}
 
 func main() {
 	// fmt.Printf("This is a sipp test script configured by golang to test the sip protocol\nAuthor: yongchengLei\n")
 	cfgFile := "SIPp.conf"
 	x := configtest(cfgFile)
-	// checkType(x.audio)
 	csvCmd, pcapCmd, sippCmd := x.mkCmd()
 	fmt.Printf("pcapCmd is: %v \ncsvCmd  is: %v \n\nsippCmd is: %v \n", pcapCmd, csvCmd, sippCmd)
 	x.mkAllFile() // 开始生成sipp呼叫配置文件
-
 	runCmd(pcapCmd, csvCmd, sippCmd)
 }
 
@@ -127,7 +115,6 @@ func (c *callConfig) mkAllFile() {
 		mySippMker.MkScenario(sipp_xml, c.test_type, c.inter_time, args) // 注册注销场景 生成注册注销时的xml
 	case "call", "register_call":
 		args = append(args, "codec", c.codec, "audio_file", audio_file, "insecure_invite", c.insecure_invite)
-		// fmt.Println(args)
 		mySippMker.MkScenario(sipp_xml, c.test_type, c.inter_time, args) // 呼叫、注册呼叫注销场景 ， 生成呼叫、注册注销时的xml
 	default:
 		fmt.Println("Test Type ERROR.....")
@@ -154,24 +141,6 @@ func runCmd(pcapCmd, csvCmd, sippCmd string) {
 	totalCmd := fmt.Sprintf("cd %v;%v;%v;%v", localDir, pcapCmd, csvCmd, sippCmd)
 	cmd := exec.Command("/bin/sh", "-c", totalCmd)
 
-	// 需要等待执行结果
-	// err := cmd.Run()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// /*
-	// 	Start启动指定的命令，但不等待它完成。
-	// 	一旦命令退出，Wait方法将返回退出代码并释放相关资源
-	// */
-	// err := cmd.Start()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Printf("Waiting for command to finish...")
-	// // err = cmd.Wait()
-	// // log.Printf("Command finished with error: %v", err)
-
 	/*
 	 获取标准输出和标准错误输出的两个管道
 	*/
@@ -179,8 +148,6 @@ func runCmd(pcapCmd, csvCmd, sippCmd string) {
 	var errStdout, errStderr error
 	stdoutIn, _ := cmd.StdoutPipe()
 	stderrIn, _ := cmd.StderrPipe()
-	// cmdStdoutPipe, _ := cmd.StdoutPipe()
-	// cmdStderrPipe, _ := cmd.StderrPipe()
 	err := cmd.Start()
 	if err != nil {
 		log.Fatal("cmd.Start() failed with '%s'\n", err)
